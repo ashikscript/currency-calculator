@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Currency calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="tag mono">currency + auto calculator</div>
+  <button class="theme" id="theme">◐ Theme</button>
+  <h1>Currency calculator</h1>
+  <p class="sub">Enter the rate, list your BDT payments. Total appears instantly.</p>
+
+  <div class="sec">INPUT</div>
+  <div class="card">
+    <label class="l" for="rate">Rate (৳ per $1)</label>
+    <input type="text" id="rate" inputmode="decimal" autocomplete="off" placeholder="e.g. 122.50">
+    <label class="l" for="amt">Add BDT payment</label>
+    <div class="row">
+      <input type="text" id="amt" inputmode="decimal" autocomplete="off" placeholder="Amount ৳">
+      <button class="btn add" id="add">Add</button>
+    </div>
+    <input type="text" id="note" class="note" placeholder="Note (optional) — bKash, Nagad...">
+    <ul id="list"></ul>
+    <p class="hint" id="empty">No payments yet. Type an amount and press Add.</p>
+  </div>
+
+  <div class="sec">RESULT</div>
+  <div class="card">
+    <div class="l">Total dollars</div>
+    <div class="big" id="usd">$0.00</div>
+    <div class="stats">
+      <div><div class="l">Total BDT sent</div><div class="v" id="bdt">৳0</div></div>
+      <div><div class="l">Payments</div><div class="v" id="cnt">0</div></div>
+    </div>
+    <button class="btn copy" id="copy">Copy Summary</button>
+  </div>
+
+  <div class="sec">SUMMARY</div>
+  <div class="card">
+    <label class="chk"><input type="checkbox" id="each"> Show dollar for each payment</label>
+    <pre id="sum"></pre>
+  </div>
+
+  <button class="reset" id="reset">Reset everything</button>
+  <footer>© 2026 Ashik. All rights reserved.</footer>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
